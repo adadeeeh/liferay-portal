@@ -1,0 +1,10 @@
+package com.liferay.docs.guestbook.portlet.constants;
+
+/**
+ * @author pedro
+ */
+public class GuestbookPortletKeys {
+
+	public static final String Guestbook = "guestbook";
+
+}
