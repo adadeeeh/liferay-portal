@@ -21,7 +21,6 @@ import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
 import com.liferay.docs.guestbook.model.Entry;
-import com.liferay.docs.guestbook.model.Guestbook;
 import com.liferay.docs.guestbook.portlet.constants.GuestbookPortletKeys;
 import com.liferay.docs.guestbook.service.EntryLocalService;
 import com.liferay.docs.guestbook.service.GuestbookLocalService;
@@ -117,37 +116,29 @@ public class GuestbookPortlet extends MVCPortlet {
 	
 	@Override
 	public void render(RenderRequest renderRequest, RenderResponse renderResponse)
-	        throws IOException, PortletException {
+	    throws PortletException, IOException {
 
-	        try {
-	            ServiceContext serviceContext = ServiceContextFactory.getInstance(
-	                Guestbook.class.getName(), renderRequest);
+	    PortletPreferences prefs = renderRequest.getPreferences();
+	    String[] guestbookEntries = prefs.getValues("guestbook-entries", new String[1]);
 
-	            long groupId = serviceContext.getScopeGroupId();
+	    if (guestbookEntries[0] != null) {
+	        List<Entry> entries = parseEntries(guestbookEntries);
+	        renderRequest.setAttribute("entries", entries);
+	    }
 
-	            long guestbookId = ParamUtil.getLong(renderRequest, "guestbookId");
+	    super.render(renderRequest, renderResponse);
+	}
+	
+	private List<Entry> parseEntries(String[] guestbookEntries) {
+	    List<Entry> entries = new ArrayList<Entry>();
 
-	            List<Guestbook> guestbooks = _guestbookLocalService.getGuestbooks(
-	                groupId);
+	    for (String entry : guestbookEntries) {
+	        String[] parts = entry.split("\\^", 2);
+	        Entry gbEntry = new Entry(parts[0], parts[1]);
+	        entries.add(gbEntry);
+	    }
 
-	            if (guestbooks.isEmpty()) {
-	                Guestbook guestbook = _guestbookLocalService.addGuestbook(
-	                    serviceContext.getUserId(), "Main", serviceContext);
-
-	                guestbookId = guestbook.getGuestbookId();
-	            }
-
-	            if (guestbookId == 0) {
-	                guestbookId = guestbooks.get(0).getGuestbookId();
-	            }
-
-	            renderRequest.setAttribute("guestbookId", guestbookId);
-	        }
-	        catch (Exception e) {
-	            throw new PortletException(e);
-	        }
-
-	        super.render(renderRequest, renderResponse);
+	    return entries;
 	}
 	
 	@Reference(unbind = "-")
