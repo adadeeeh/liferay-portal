@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.liferay.portal.kernel.model.PortletPreferences"/>
+<fullyQualifiedTypeName name="javax.portlet.PortletPreferences"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="com.liferay.portal.kernel.util.ParamUtil"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="java.util.logging.Logger"/>
+<fullyQualifiedTypeName name="com.liferay.portal.kernel.monitoring.Level"/>
+<fullyQualifiedTypeName name="java.util.logging.Level"/>
+<fullyQualifiedTypeName name="javax.portlet.ReadOnlyException"/>
+<fullyQualifiedTypeName name="javax.portlet.ValidatorException"/>
+<fullyQualifiedTypeName name="javax.portlet.RenderRequest"/>
+<fullyQualifiedTypeName name="javax.portlet.PortletException"/>
+<fullyQualifiedTypeName name="javax.portlet.RenderResponse"/>
+<fullyQualifiedTypeName name="com.liferay.docs.guestbook.model.Guestbook"/>
+<fullyQualifiedTypeName name="com.liferay.portal.kernel.exception.PortalException"/>
+<fullyQualifiedTypeName name="com.liferay.portal.kernel.model.User"/>
+<fullyQualifiedTypeName name="com.liferay.docs.guestbook.model.Entry"/>
+<fullyQualifiedTypeName name="com.liferay.portal.kernel.service.ServiceContext"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="com.liferay.portal.kernel.exception.SystemException"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.liferay.portal.kernel.util.Validator"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,10 @@
+#
+#Thu Mar 21 20:55:42 WIB 2019
+linkedResources=
+managedNatures=
+classpath=<?xml version\="1.0" encoding\="UTF-8"?>\n<classpath>\n</classpath>\n
+subprojectPaths=guestbook\:guestbook-web\:guestbook/guestbook-api\:guestbook/guestbook-service
+derivedResources=.gradle\:build\:guestbook/build\:guestbook-web/build\:guestbook/guestbook-api/build\:guestbook/guestbook-service/build
+buildScriptPath=build.gradle
+managedBuilders=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><commands/>
+buildDir=build
